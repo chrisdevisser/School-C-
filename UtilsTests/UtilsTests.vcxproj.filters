@@ -24,5 +24,8 @@
     <ClCompile Include="Preprocessor\stringify.cc">
       <Filter>Source Files\Preprocessor</Filter>
     </ClCompile>
+    <ClCompile Include="Preprocessor\concat.cc">
+      <Filter>Source Files\Preprocessor</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
