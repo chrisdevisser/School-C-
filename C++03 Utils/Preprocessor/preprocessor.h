@@ -1,5 +1,6 @@
 #pragma once
 
+#include "bool.h"
 #include "comma.h"
 #include "comma_if.h"
 #include "concat.h"

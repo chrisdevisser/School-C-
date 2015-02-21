@@ -36,5 +36,8 @@
     <ClCompile Include="Preprocessor\comma_if.cc">
       <Filter>Source Files\Preprocessor</Filter>
     </ClCompile>
+    <ClCompile Include="Preprocessor\bool.cc">
+      <Filter>Source Files\Preprocessor</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
