@@ -81,6 +81,7 @@
     <ClCompile Include="Preprocessor\comma_if.cc" />
     <ClCompile Include="Preprocessor\concat.cc" />
     <ClCompile Include="Preprocessor\if.cc" />
+    <ClCompile Include="Preprocessor\pair.cc" />
     <ClCompile Include="Preprocessor\repeat.cc" />
     <ClCompile Include="Preprocessor\stringify.cc" />
   </ItemGroup>

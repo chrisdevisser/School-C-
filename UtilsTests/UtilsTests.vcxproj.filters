@@ -39,5 +39,8 @@
     <ClCompile Include="Preprocessor\bool.cc">
       <Filter>Source Files\Preprocessor</Filter>
     </ClCompile>
+    <ClCompile Include="Preprocessor\pair.cc">
+      <Filter>Source Files\Preprocessor</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
