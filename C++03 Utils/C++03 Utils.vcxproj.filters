@@ -57,5 +57,8 @@
     <ClInclude Include="Preprocessor\generate_parameters.h">
       <Filter>Preprocessor</Filter>
     </ClInclude>
+    <ClInclude Include="smart_ptr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
