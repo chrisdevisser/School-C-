@@ -77,13 +77,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cc" />
+    <ClCompile Include="Preprocessor\concat.cc" />
+    <ClCompile Include="Preprocessor\if.cc" />
     <ClCompile Include="Preprocessor\stringify.cc" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Preprocessor\concat.cc">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
-      <FileType>CppHeader</FileType>
-    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

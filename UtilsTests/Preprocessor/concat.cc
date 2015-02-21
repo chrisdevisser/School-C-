@@ -10,7 +10,7 @@ TEST_CASE("CONCAT empty first argument is second") {
 }
 
 TEST_CASE("CONCAT empty second argument is first") {
-	std::string result = UW_STRINGIFY(UW_CONCAT(x,));
+	std::string result = UW_STRINGIFY(UW_CONCAT(x, ));
 
 	REQUIRE(result == "x");
 }
