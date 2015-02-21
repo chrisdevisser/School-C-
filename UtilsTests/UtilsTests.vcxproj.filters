@@ -45,5 +45,8 @@
     <ClCompile Include="Preprocessor\repeat_comma_separated.cc">
       <Filter>Source Files\Preprocessor</Filter>
     </ClCompile>
+    <ClCompile Include="Preprocessor\generate_parameters.cc">
+      <Filter>Source Files\Preprocessor</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
