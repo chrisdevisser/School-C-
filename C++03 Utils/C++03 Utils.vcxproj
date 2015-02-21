@@ -10,20 +10,34 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Preprocessor\bool.h" />
+    <ClInclude Include="Preprocessor\comma.h" />
+    <ClInclude Include="Preprocessor\comma_if.h" />
+    <ClInclude Include="Preprocessor\concat.h" />
+    <ClInclude Include="Preprocessor\discard.h" />
+    <ClInclude Include="Preprocessor\empty.h" />
+    <ClInclude Include="Preprocessor\if.h" />
+    <ClInclude Include="Preprocessor\pair.h" />
+    <ClInclude Include="Preprocessor\preprocessor.h" />
+    <ClInclude Include="Preprocessor\repeat.h" />
+    <ClInclude Include="Preprocessor\repeat_comma_separated.h" />
+    <ClInclude Include="Preprocessor\stringify.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{796B94F0-AB89-4AAE-A302-B8CC3349DE18}</ProjectGuid>
+    <ProjectGuid>{BCAC6D41-EEDD-40DC-8F6B-741FF26779CD}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>UtilsTests</RootNamespace>
+    <RootNamespace>C03Utils</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -39,22 +53,17 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
+  <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -66,26 +75,15 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cc" />
-    <ClCompile Include="Preprocessor\bool.cc" />
-    <ClCompile Include="Preprocessor\comma_if.cc" />
-    <ClCompile Include="Preprocessor\concat.cc" />
-    <ClCompile Include="Preprocessor\if.cc" />
-    <ClCompile Include="Preprocessor\pair.cc" />
-    <ClCompile Include="Preprocessor\repeat.cc" />
-    <ClCompile Include="Preprocessor\repeat_comma_separated.cc" />
-    <ClCompile Include="Preprocessor\stringify.cc" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

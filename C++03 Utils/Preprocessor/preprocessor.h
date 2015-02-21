@@ -9,4 +9,5 @@
 #include "if.h"
 #include "pair.h"
 #include "repeat.h"
+#include "repeat_comma_separated.h"
 #include "stringify.h"
