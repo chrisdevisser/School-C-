@@ -7,5 +7,6 @@
 #include "discard.h"
 #include "empty.h"
 #include "if.h"
+#include "pair.h"
 #include "repeat.h"
 #include "stringify.h"
