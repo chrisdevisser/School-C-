@@ -57,14 +57,14 @@
     <ClInclude Include="Preprocessor\pair.h">
       <Filter>Preprocessor</Filter>
     </ClInclude>
-    <ClInclude Include="Preprocessor\generate_parameters.h">
-      <Filter>Preprocessor</Filter>
-    </ClInclude>
     <ClInclude Include="shared_ptr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="detail\reference_counter.h">
       <Filter>detail</Filter>
+    </ClInclude>
+    <ClInclude Include="Preprocessor\generate_namelist.h">
+      <Filter>Preprocessor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

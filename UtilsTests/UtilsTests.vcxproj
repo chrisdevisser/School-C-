@@ -80,7 +80,7 @@
     <ClCompile Include="Preprocessor\bool.cc" />
     <ClCompile Include="Preprocessor\comma_if.cc" />
     <ClCompile Include="Preprocessor\concat.cc" />
-    <ClCompile Include="Preprocessor\generate_parameters.cc" />
+    <ClCompile Include="Preprocessor\generate_namelist.cc" />
     <ClCompile Include="Preprocessor\if.cc" />
     <ClCompile Include="Preprocessor\pair.cc" />
     <ClCompile Include="Preprocessor\repeat.cc" />

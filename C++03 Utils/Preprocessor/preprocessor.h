@@ -6,7 +6,7 @@
 #include "concat.h"
 #include "discard.h"
 #include "empty.h"
-#include "generate_parameters.h"
+#include "generate_namelist.h"
 #include "if.h"
 #include "pair.h"
 #include "repeat.h"

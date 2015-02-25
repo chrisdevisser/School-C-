@@ -45,11 +45,11 @@
     <ClCompile Include="Preprocessor\repeat_comma_separated.cc">
       <Filter>Source Files\Preprocessor</Filter>
     </ClCompile>
-    <ClCompile Include="Preprocessor\generate_parameters.cc">
-      <Filter>Source Files\Preprocessor</Filter>
-    </ClCompile>
     <ClCompile Include="shared_ptr.cc">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Preprocessor\generate_namelist.cc">
+      <Filter>Source Files\Preprocessor</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
