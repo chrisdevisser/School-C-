@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="detail\reference_counter.h" />
     <ClInclude Include="Preprocessor\bool.h" />
     <ClInclude Include="Preprocessor\comma.h" />
     <ClInclude Include="Preprocessor\comma_if.h" />
@@ -24,7 +25,7 @@
     <ClInclude Include="Preprocessor\repeat.h" />
     <ClInclude Include="Preprocessor\repeat_comma_separated.h" />
     <ClInclude Include="Preprocessor\stringify.h" />
-    <ClInclude Include="smart_ptr.h" />
+    <ClInclude Include="shared_ptr.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{BCAC6D41-EEDD-40DC-8F6B-741FF26779CD}</ProjectGuid>

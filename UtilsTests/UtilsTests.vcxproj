@@ -86,7 +86,7 @@
     <ClCompile Include="Preprocessor\repeat.cc" />
     <ClCompile Include="Preprocessor\repeat_comma_separated.cc" />
     <ClCompile Include="Preprocessor\stringify.cc" />
-    <ClCompile Include="smart_ptr.cc" />
+    <ClCompile Include="shared_ptr.cc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -16,6 +16,9 @@
     <Filter Include="Preprocessor">
       <UniqueIdentifier>{ac74782c-1397-4755-a830-d3eb99ee0695}</UniqueIdentifier>
     </Filter>
+    <Filter Include="detail">
+      <UniqueIdentifier>{11056d86-1f0f-47fe-bc61-cbacce3f1305}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Preprocessor\preprocessor.h">
@@ -57,8 +60,11 @@
     <ClInclude Include="Preprocessor\generate_parameters.h">
       <Filter>Preprocessor</Filter>
     </ClInclude>
-    <ClInclude Include="smart_ptr.h">
+    <ClInclude Include="shared_ptr.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\reference_counter.h">
+      <Filter>detail</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

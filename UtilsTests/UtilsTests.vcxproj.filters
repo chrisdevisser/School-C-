@@ -48,7 +48,7 @@
     <ClCompile Include="Preprocessor\generate_parameters.cc">
       <Filter>Source Files\Preprocessor</Filter>
     </ClCompile>
-    <ClCompile Include="smart_ptr.cc">
+    <ClCompile Include="shared_ptr.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
