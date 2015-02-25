@@ -12,13 +12,15 @@
 //Calls the given macro the given number of times.
 //The first argument to the macro is the index, 0..count-1.
 //The second argument to the macro is the given data.
-#define UW_REPEAT UW_CONCAT(IMPL_UW_REPEAT_, IMPL_UW_NEXT_AVAILABLE_DIMENSION)
+#define UW_REPEAT \
+	UW_CONCAT(IMPL_UW_REPEAT_, IMPL_UW_NEXT_AVAILABLE_DIMENSION)
 
 //NEXT_AVAILABLE_DIMENSION expands to 1 or 2 based on the conditions listed for REPEAT.
 //We will test whether dimension 1 is in use via IS_DIMENSION_IN_USE.
 //It will expand to 1 if it is, or 0 if it isn't.
 //If dimension 1 is in use, this will expand to 2. Otherwise, it will expand to 1.
-#define IMPL_UW_NEXT_AVAILABLE_DIMENSION UW_IF(IMPL_UW_IS_DIMENSION_1_IN_USE, 2, 1)
+#define IMPL_UW_NEXT_AVAILABLE_DIMENSION \
+	UW_IF(IMPL_UW_IS_DIMENSION_1_IN_USE, 2, 1)
 
 //We will use the very same constraint that forces us into this situation to escape.
 //Macros cannot be expanded recursively.
@@ -36,14 +38,16 @@
 //Thus, IMPL_UW_REPEAT_1(1, NO UW_DISCARD2, data) will expand to NO.
 //Thus, we end up with IMPL_UW_IS_DIMENSION_1_IN_USE_NO.
 //This is the other helper macro. It expands to 0 because dimension 1 is not in use.
-#define IMPL_UW_IS_DIMENSION_1_IN_USE UW_CONCAT(IMPL_UW_IS_DIMENSION_1_IN_USE_, IMPL_UW_REPEAT_1(1, NO UW_DISCARD2, data))
+#define IMPL_UW_IS_DIMENSION_1_IN_USE \
+	UW_CONCAT(IMPL_UW_IS_DIMENSION_1_IN_USE_, IMPL_UW_REPEAT_1(1, NO UW_DISCARD2, data))
 
 #define IMPL_UW_IS_DIMENSION_1_IN_USE_IMPL_UW_REPEAT_1(arg1, arg2, arg3) 1
 #define IMPL_UW_IS_DIMENSION_1_IN_USE_NO 0
 
 //REPEAT_1 is used when the first dimension is available. It selects a helper macro based on the value of count.
 //The helper macro then calls one level below it until 1 or 0 is reached. On each level, the macro is called with the proper index.
-#define IMPL_UW_REPEAT_1(count, macro, data) UW_CONCAT(IMPL_UW_REPEAT_1_, count)(macro, data)
+#define IMPL_UW_REPEAT_1(count, macro, data) \
+	UW_CONCAT(IMPL_UW_REPEAT_1_, count)(macro, data)
 
 #define IMPL_UW_REPEAT_1_0(macro, data)
 #define IMPL_UW_REPEAT_1_1(macro, data) macro(0, data)
@@ -64,7 +68,8 @@
 #define IMPL_UW_REPEAT_1_16(macro, data) IMPL_UW_REPEAT_1_15(macro, data) macro(15, data)
 
 //REPEAT_2 is used when the second dimension is available. It works just like REPEAT_1.
-#define IMPL_UW_REPEAT_2(count, macro, data) UW_CONCAT(IMPL_UW_REPEAT_2_, count)(macro, data)
+#define IMPL_UW_REPEAT_2(count, macro, data) \
+	UW_CONCAT(IMPL_UW_REPEAT_2_, count)(macro, data)
 
 #define IMPL_UW_REPEAT_2_0(macro, data)
 #define IMPL_UW_REPEAT_2_1(macro, data) macro(0, data)

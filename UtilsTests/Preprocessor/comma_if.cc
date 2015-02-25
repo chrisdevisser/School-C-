@@ -4,9 +4,9 @@
 #include "../../C++03 Utils/Preprocessor/preprocessor.h"
 
 TEST_CASE("COMMA_IF 1 expands to comma") {
-	std::string result = (0 UW_COMMA_IF(1) "Success");
+	std::string result = (UW_STRINGIFY((before UW_COMMA_IF(1) after)));
 
-	REQUIRE(result == "Success");
+	REQUIRE(result == "(before , after)");
 }
 
 TEST_CASE("COMMA_IF 0 expands to nothing") {

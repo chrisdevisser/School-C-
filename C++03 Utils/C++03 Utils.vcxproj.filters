@@ -66,5 +66,8 @@
     <ClInclude Include="Preprocessor\generate_namelist.h">
       <Filter>Preprocessor</Filter>
     </ClInclude>
+    <ClInclude Include="Preprocessor\generate_paramlist.h">
+      <Filter>Preprocessor</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

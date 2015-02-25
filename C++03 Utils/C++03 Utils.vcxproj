@@ -19,6 +19,7 @@
     <ClInclude Include="Preprocessor\discard.h" />
     <ClInclude Include="Preprocessor\empty.h" />
     <ClInclude Include="Preprocessor\generate_namelist.h" />
+    <ClInclude Include="Preprocessor\generate_paramlist.h" />
     <ClInclude Include="Preprocessor\if.h" />
     <ClInclude Include="Preprocessor\pair.h" />
     <ClInclude Include="Preprocessor\preprocessor.h" />

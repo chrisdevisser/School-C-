@@ -3,7 +3,8 @@
 #include "concat.h"
 
 //Expands to 0 if integer is 0, or 1 if integer is 1, 2, ..., 16
-#define UW_BOOL(integer) UW_CONCAT(IMPL_UW_BOOL_, integer)
+#define UW_BOOL(integer) \
+	UW_CONCAT(IMPL_UW_BOOL_, integer)
 
 #define IMPL_UW_BOOL_0 0
 #define IMPL_UW_BOOL_1 1

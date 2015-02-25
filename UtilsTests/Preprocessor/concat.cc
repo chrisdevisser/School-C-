@@ -3,14 +3,16 @@
 #include "../../Libraries/catch.hpp"
 #include "../../C++03 Utils/Preprocessor/preprocessor.h"
 
-TEST_CASE("CONCAT empty first argument is second") {
-	std::string result = UW_STRINGIFY(UW_CONCAT(, x));
+#define MACRO expanded
 
-	REQUIRE(result == "x");
+TEST_CASE("CONCAT macro first argument is expanded") {
+	std::string result = UW_STRINGIFY(UW_CONCAT(MACRO, x));
+
+	REQUIRE(result == "expandedx");
 }
 
-TEST_CASE("CONCAT empty second argument is first") {
-	std::string result = UW_STRINGIFY(UW_CONCAT(x, ));
+TEST_CASE("CONCAT macro second argument is expanded") {
+	std::string result = UW_STRINGIFY(UW_CONCAT(x, MACRO));
 
-	REQUIRE(result == "x");
+	REQUIRE(result == "xexpanded");
 }
