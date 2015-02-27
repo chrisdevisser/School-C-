@@ -1,6 +1,7 @@
 #pragma once
 
 #include "concat.h"
+#include "discard.h"
 #include "if.h"
 
 //REPEAT supports two dimensions. This is harder because macros are not recursive.

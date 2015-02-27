@@ -3,6 +3,10 @@
 #include <stdexcept>
 
 #include "detail/reference_counter.h"
+#include "Preprocessor/comma_if.h"
+#include "Preprocessor/generate_namelist.h"
+#include "Preprocessor/generate_paramlist.h"
+#include "Preprocessor/repeat.h"
 
 namespace school {
 	template<typename TPointee, typename TReferenceCounter = detail::ReferenceCounter>
@@ -17,6 +21,10 @@ namespace school {
 		//Takes ownership of the given pointer.
 		template<typename TCompatiblePointee>
 		SharedPtr(TCompatiblePointee *unownedPtr) : ptr_(unownedPtr), refCounter_(new TReferenceCounter()) {
+			refCounter_->increment();
+		}
+
+		SharedPtr(const SharedPtr &other) : ptr_(other.ptr_), refCounter_(other.refCounter_) {
 			refCounter_->increment();
 		}
 
@@ -69,4 +77,14 @@ namespace school {
 		TPointee *ptr_;
 		TReferenceCounter *refCounter_;
 	};
+
+	#define MAKE_SHARED_TEMPLATE(index, data)                                                  \
+		template<typename TPointee UW_COMMA_IF(index) UW_GENERATE_NAMELIST(index, typename T)> \
+		SharedPtr<TPointee> makeShared(UW_GENERATE_PARAMLIST(index, T, arg)) {                 \
+			return SharedPtr<TPointee>(new TPointee(UW_GENERATE_NAMELIST(index, arg)));        \
+		}
+
+	UW_REPEAT(16, MAKE_SHARED_TEMPLATE, ?)
+
+	#undef MAKE_SHARED_TEMPLATE
 }
