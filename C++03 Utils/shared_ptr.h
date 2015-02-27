@@ -12,6 +12,9 @@ namespace school {
 	template<typename TPointee, typename TReferenceCounter = detail::ReferenceCounter>
 	//A simple reference-counted, shared ownership smart pointer.
 	struct SharedPtr {
+		template<typename TCompatiblePointee, typename TRefCounter>
+		friend struct SharedPtr;
+
 		//Constructs a null pointer.
 		SharedPtr() : ptr_(), refCounter_(new TReferenceCounter()) {
 			//increment so that destructor will work properly when decrementing
@@ -20,10 +23,11 @@ namespace school {
 
 		//Takes ownership of the given pointer.
 		template<typename TCompatiblePointee>
-		SharedPtr(TCompatiblePointee *unownedPtr) : ptr_(unownedPtr), refCounter_(new TReferenceCounter()) {
+		explicit SharedPtr(TCompatiblePointee *unownedPtr) : ptr_(unownedPtr), refCounter_(new TReferenceCounter()) {
 			refCounter_->increment();
 		}
 
+		//Copies another SharedPtr by copying the underlying pointer and increasing the reference count.
 		SharedPtr(const SharedPtr &other) : ptr_(other.ptr_), refCounter_(other.refCounter_) {
 			refCounter_->increment();
 		}

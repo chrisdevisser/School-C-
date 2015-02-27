@@ -8,7 +8,7 @@ bool g_mockObjectDestroyed;
 struct MockObject {
 	MockObject() : functionCallCount_() {}
 
-	~MockObject() {
+	virtual ~MockObject() {
 		g_mockObjectDestroyed = true;
 	}
 
@@ -24,10 +24,10 @@ private:
 	int functionCallCount_;
 };
 
-bool g_mockObject2Destroyed;
-struct MockObject2 {
-	~MockObject2() {
-		g_mockObject2Destroyed = true;
+bool g_mockObjectDerivedDestroyed;
+struct MockObjectDerived : MockObject {
+	~MockObjectDerived() {
+		g_mockObjectDerivedDestroyed = true;
 	}
 };
 
@@ -161,4 +161,15 @@ TEST_CASE("SharedPtr copy object is destroyed at end of both scopes") {
 	}
 
 	REQUIRE(g_mockObjectDestroyed);
+}
+
+TEST_CASE("SharedPtr to base destroys derived") {
+	g_mockObjectDestroyed = false;
+	g_mockObjectDerivedDestroyed = false;
+	{
+		SharedPtr<MockObject> sp = makeShared<MockObjectDerived>();
+	}
+
+	REQUIRE(g_mockObjectDestroyed);
+	REQUIRE(g_mockObjectDerivedDestroyed);
 }
